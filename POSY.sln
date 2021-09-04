@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - App", "2 - App", "{6ECBD618-701E-40E5-9CE5-39857A57C2F0}"
 EndProject
@@ -38,6 +38,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSY.UI.WF", "POSY.UI.WF\POSY.UI.WF.csproj", "{85190989-BBFE-4CD6-928B-0016F627B6A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSY.Api", "POSY.Api\POSY.Api.csproj", "{777B4E04-268D-42FB-BD24-8D2A4CDD039D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BAC7B10-B599-4D14-A33F-07967495F083}"
+	ProjectSection(SolutionItems) = preProject
+		Secrets.txt = Secrets.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,59 +120,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F672035-9D97-46E8-A2A8-F2DAAEF64B82}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://posy.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = POSY.App\\POSY.App.csproj
-		SccProjectTopLevelParentUniqueName1 = POSY.sln
-		SccProjectName1 = POSY.App
-		SccLocalPath1 = POSY.App
-		SccProjectUniqueName2 = POSY.Domain.Tests\\POSY.Domain.Tests.csproj
-		SccProjectTopLevelParentUniqueName2 = POSY.sln
-		SccProjectName2 = POSY.Domain.Tests
-		SccLocalPath2 = POSY.Domain.Tests
-		SccProjectUniqueName3 = POSY.Domain\\POSY.Domain.csproj
-		SccProjectTopLevelParentUniqueName3 = POSY.sln
-		SccProjectName3 = POSY.Domain
-		SccLocalPath3 = POSY.Domain
-		SccProjectUniqueName4 = POSY.Infra.CrossCutting.Common.Tests\\POSY.Infra.CrossCutting.Common.Tests.csproj
-		SccProjectTopLevelParentUniqueName4 = POSY.sln
-		SccProjectName4 = POSY.Infra.CrossCutting.Common.Tests
-		SccLocalPath4 = POSY.Infra.CrossCutting.Common.Tests
-		SccProjectUniqueName5 = POSY.Infra.CrossCutting.Common\\POSY.Infra.CrossCutting.Common.csproj
-		SccProjectTopLevelParentUniqueName5 = POSY.sln
-		SccProjectName5 = POSY.Infra.CrossCutting.Common
-		SccLocalPath5 = POSY.Infra.CrossCutting.Common
-		SccProjectUniqueName6 = POSY.Infra.CrossCutting.Identity\\POSY.Infra.CrossCutting.Identity.csproj
-		SccProjectTopLevelParentUniqueName6 = POSY.sln
-		SccProjectName6 = POSY.Infra.CrossCutting.Identity
-		SccLocalPath6 = POSY.Infra.CrossCutting.Identity
-		SccProjectUniqueName7 = POSY.Infra.CrossCutting.IoC\\POSY.Infra.CrossCutting.IoC.csproj
-		SccProjectTopLevelParentUniqueName7 = POSY.sln
-		SccProjectName7 = POSY.Infra.CrossCutting.IoC
-		SccLocalPath7 = POSY.Infra.CrossCutting.IoC
-		SccProjectUniqueName8 = POSY.Infra.Data\\POSY.Infra.Data.csproj
-		SccProjectTopLevelParentUniqueName8 = POSY.sln
-		SccProjectName8 = POSY.Infra.Data
-		SccLocalPath8 = POSY.Infra.Data
-		SccProjectUniqueName9 = POSY.MVC\\POSY.MVC.csproj
-		SccProjectTopLevelParentUniqueName9 = POSY.sln
-		SccProjectName9 = POSY.MVC
-		SccLocalPath9 = POSY.MVC
-		SccProjectUniqueName10 = POSY.UI.DOS\\POSY.UI.DOS.csproj
-		SccProjectTopLevelParentUniqueName10 = POSY.sln
-		SccProjectName10 = POSY.UI.DOS
-		SccLocalPath10 = POSY.UI.DOS
-		SccProjectUniqueName11 = POSY.UI.WF\\POSY.UI.WF.csproj
-		SccProjectTopLevelParentUniqueName11 = POSY.sln
-		SccProjectName11 = POSY.UI.WF
-		SccLocalPath11 = POSY.UI.WF
-		SccProjectUniqueName12 = POSY.Api\\POSY.Api.csproj
-		SccProjectTopLevelParentUniqueName12 = POSY.sln
-		SccProjectName12 = POSY.Api
-		SccLocalPath12 = POSY.Api
 	EndGlobalSection
 EndGlobal
