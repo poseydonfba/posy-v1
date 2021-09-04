@@ -1,4 +1,4 @@
-# posy-v1
+# Posy v1
 Rede social para teste de tecnologias, versão 1.
 
 
@@ -18,3 +18,13 @@ Rede social para teste de tecnologias, versão 1.
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
+
+- ASPNET WEBFORMS
+- ASPNET MVC
+- ASPNET WEBAPI
+- ASPNET Identity
+- ASPNET EntityFramework
+- Injeção de Dependencia
+- Swagger
+
+- SQL Server
