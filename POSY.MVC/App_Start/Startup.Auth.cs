@@ -64,80 +64,90 @@ namespace POSY.MVC
 
             #region TWITTER
 
-            var tao = new TwitterAuthenticationOptions
+            if (!string.IsNullOrEmpty(TwitterConfiguration.ConsumerKey))
             {
-                ConsumerKey = TwitterConfiguration.ConsumerKey,
-                ConsumerSecret = TwitterConfiguration.ConsumerSecret
-            };
-
-            tao.Provider = new TwitterAuthenticationProvider()
-            {
-                OnAuthenticated = (context) =>
+                var tao = new TwitterAuthenticationOptions
                 {
-                    context.Identity.AddClaim(new Claim("urn:twitter:access_token", context.AccessToken));
-                    context.Identity.AddClaim(new Claim("urn:twitter:access_secret", context.AccessTokenSecret));
-                    return Task.FromResult(0);
-                }
-            };
+                    ConsumerKey = TwitterConfiguration.ConsumerKey,
+                    ConsumerSecret = TwitterConfiguration.ConsumerSecret
+                };
 
-            tao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
-            app.UseTwitterAuthentication(tao);
+                tao.Provider = new TwitterAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new Claim("urn:twitter:access_token", context.AccessToken));
+                        context.Identity.AddClaim(new Claim("urn:twitter:access_secret", context.AccessTokenSecret));
+                        return Task.FromResult(0);
+                    }
+                };
+
+                tao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
+                app.UseTwitterAuthentication(tao);
+            }
 
             #endregion
 
             #region GOOGLE
 
-            var gao = new GoogleOAuth2AuthenticationOptions
+            if (!string.IsNullOrEmpty(GoogleConfiguration.ClientId))
             {
-                ClientId = GoogleConfiguration.ClientId,
-                ClientSecret = GoogleConfiguration.ClientSecret,
-            };
+                var gao = new GoogleOAuth2AuthenticationOptions
+                {
+                    ClientId = GoogleConfiguration.ClientId,
+                    ClientSecret = GoogleConfiguration.ClientSecret,
+                };
 
-            gao.Scope.Add("email");
+                gao.Scope.Add("email");
 
-            gao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
-            app.UseGoogleAuthentication(gao);
+                gao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
+                app.UseGoogleAuthentication(gao);
+            }
 
             #endregion
 
             #region FACEBOOK
 
-            var fao = new FacebookAuthenticationOptions
+            if (!string.IsNullOrEmpty(FacebookConfiguration.AppId))
             {
-                AppId = FacebookConfiguration.AppId,
-                AppSecret = FacebookConfiguration.AppSecret
-            };
-
-            fao.Scope.Add("public_profile");
-            fao.Scope.Add("email");
-            //fao.Scope.Add("publish_actions");
-            //fao.Scope.Add("basic_info");
-
-            //add this for facebook to actually return the email and name
-            fao.Fields.Add("email");
-            fao.Fields.Add("name");
-            fao.Fields.Add("first_name");
-            fao.Fields.Add("last_name");
-
-            fao.Provider = new FacebookAuthenticationProvider()
-            {
-                OnAuthenticated = (context) =>
+                var fao = new FacebookAuthenticationOptions
                 {
-                    context.Identity.AddClaim(new Claim("urn:facebook:access_token", context.AccessToken, XmlSchemaString, "Facebook"));
-                    foreach (var x in context.User)
+                    AppId = FacebookConfiguration.AppId,
+                    AppSecret = FacebookConfiguration.AppSecret
+                };
+
+                fao.Scope.Add("public_profile");
+                fao.Scope.Add("email");
+                //fao.Scope.Add("publish_actions");
+                //fao.Scope.Add("basic_info");
+
+                //add this for facebook to actually return the email and name
+                fao.Fields.Add("email");
+                fao.Fields.Add("name");
+                fao.Fields.Add("first_name");
+                fao.Fields.Add("last_name");
+
+                fao.Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
                     {
-                        var claimType = string.Format("urn:facebook:{0}", x.Key);
-                        string claimValue = x.Value.ToString();
-                        if (!context.Identity.HasClaim(claimType, claimValue))
-                            context.Identity.AddClaim(new Claim(claimType, claimValue, XmlSchemaString, "Facebook"));
+                        context.Identity.AddClaim(new Claim("urn:facebook:access_token", context.AccessToken, XmlSchemaString, "Facebook"));
+                        foreach (var x in context.User)
+                        {
+                            var claimType = string.Format("urn:facebook:{0}", x.Key);
+                            string claimValue = x.Value.ToString();
+                            if (!context.Identity.HasClaim(claimType, claimValue))
+                                context.Identity.AddClaim(new Claim(claimType, claimValue, XmlSchemaString, "Facebook"));
 
+                        }
+                        return Task.FromResult(0);
                     }
-                    return Task.FromResult(0);
-                }
-            };
+                };
 
-            fao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
-            app.UseFacebookAuthentication(fao);
+                fao.SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie;
+                app.UseFacebookAuthentication(fao);
+
+            }
 
             #endregion
         }

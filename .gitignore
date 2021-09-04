@@ -1,5 +1,7 @@
 BuildProcessTemplates/
 packages/
+Secrets.txt
+.vs/
 POSY.UI.DOS/
 POSY.Api/bin/
 POSY.Api/obj/
