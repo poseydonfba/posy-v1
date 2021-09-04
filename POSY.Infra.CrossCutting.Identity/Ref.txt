@@ -1,0 +1,10 @@
+﻿Install-Package EntityFramework
+Install-Package Microsoft.AspNet.Identity.EntityFramework
+Install-Package Twilio -Version 4.0.51
+Install-Package Microsoft.AspNet.Identity.Owin
+Install-Package Microsoft.AspNet.Mvc -Version 5.2.2
+
+
+-- Custom Identity
+
+https://docs.microsoft.com/en-us/aspnet/identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity

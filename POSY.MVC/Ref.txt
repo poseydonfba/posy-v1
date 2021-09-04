@@ -1,0 +1,11 @@
+﻿Install-Package EntityFramework
+Install-Package SimpleInjector.MVC3 -Version 3.0.5
+Install-Package Microsoft.Owin.Host.SystemWeb -Version 3.1.0
+Install-Package Microsoft.Owin.Security -Version 3.1.0
+Install-Package Microsoft.AspNet.Identity.Owin
+Install-Package Microsoft.AspNet.Identity.EntityFramework
+Install-Package Microsoft.Owin.Security.Facebook -Version 3.1.0
+Install-Package Microsoft.Owin.Security.Google -Version 3.1.0
+Install-Package Microsoft.Owin.Security.Twitter -Version 3.1.0
+Install-Package Microsoft.Owin.Security.MicrosoftAccount -Version 3.1.0
+--Install-Package Microsoft.AspNet.Authentication.OAuth -Version 1.0.0-rc1-final

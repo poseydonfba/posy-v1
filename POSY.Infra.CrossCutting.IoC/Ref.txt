@@ -1,0 +1,3 @@
+﻿Install-Package EntityFramework
+Install-Package Microsoft.AspNet.Identity.EntityFramework
+Install-Package SimpleInjector.Integration.Web -Version 3.0.5
