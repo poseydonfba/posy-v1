@@ -15,7 +15,7 @@ Rede social para teste de tecnologias, versão 1.
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fernandoboais/)](https://www.linkedin.com/in/fernandoboais/)
 
 
-## 🛠 Tecnologias
+## Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
